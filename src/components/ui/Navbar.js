@@ -22,11 +22,11 @@ export const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-sm navbar-dark bg-dark'>
 
-      <link
+      <Link
       className='navbar-brand'
       to="/">
         NavbarApp
-      </link>
+      </Link>
 
       <div className='navbar-collapse'>
         <div className='navbar-nav'>
