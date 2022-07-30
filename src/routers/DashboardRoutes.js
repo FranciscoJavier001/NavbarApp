@@ -1,5 +1,10 @@
 import React from 'react'
+import { FirstScreen } from '../components/pages/FirstScreen'
+import { SecondScreen } from '../components/pages/SecondScreen'
+import { ThirdScreen } from '../components/pages/ThirdScreen'
+import { SearchScreen } from '../components/search/SearchScreen'
 import { Navbar } from '../components/ui/Navbar'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 export const DashboardRoutes = () => {
   return (
