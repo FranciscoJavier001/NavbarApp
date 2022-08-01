@@ -4,15 +4,15 @@ import { types } from '../../types/types'
 
 export const LoginScreen = ({history}) => { //** Exportamos el LS y recibimos el history */
 
-    // const {dispatch} = useContext(AuthContext)
-    const context = useContext(AuthContext) //** Importamos el context y le pasamos el dispatch */
-    console.log(context)
+    const {dispatch} = useContext(AuthContext)
+    // const context = useContext(AuthContext) //** Importamos el context y le pasamos el dispatch */
+    // console.log(context)
 
     const handleLogin = () => { //** Funcion que no recibe nada */
 
       const lasthPath = localStorage.getItem('lastPath') || '/' //** Obtenemos el ultimo path o mandamos al / */
 
-      context.dispatch({ //** La accion que dispara esta funcion, en el AuthContext en CreateContext */
+      dispatch({ //** La accion que dispara esta funcion, en el AuthContext en CreateContext */
         type: types.login, //** Necesitamos definir el tipo de accion */
         payload: {
           name: 'Usuario'
@@ -23,7 +23,7 @@ export const LoginScreen = ({history}) => { //** Exportamos el LS y recibimos el
     }
 
   return (
-    <div>
+    <div className='container mt-5'>
       <h1>Login</h1>
       <hr />
 

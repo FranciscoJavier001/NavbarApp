@@ -1,20 +1,18 @@
 import React, { useContext } from 'react'
-import { Link, NavLink, useHistory } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../auth/AuthContext'
 import { types } from '../../types/types'
 
 export const Navbar = () => {
 
-    const context = useContext(AuthContext)
-    // const context.user.name = useContext(AuthContext)
-    // const {user:{name}, dispatch} = useContext(AuthContext)
-    const history = useHistory()
+    const {user:{name}, dispatch} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogout = () => {
 
-        history.replace('/login')
+        navigate('/login')
 
-        dispatchEvent({
+        dispatch({
             type: types.logout
         })
     }
@@ -32,36 +30,28 @@ export const Navbar = () => {
         <div className='navbar-nav'>
 
           <NavLink
-            activeClassName="active"
-            className="nav-item nav-link"
-            exact
-            to="/firstcreen"
+          className={ ({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}` }
+          to="/firstScreen"
           >
-            FirstScreen
+            FirstScreens
           </NavLink>
 
           <NavLink
-            activeClassName="active"
-            className="nav-item nav-link"
-            exact
+            className={ ({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}` }
             to="/secondcreen"
           >
             SecondScreen
           </NavLink>
 
           <NavLink
-            activeClassName="active"
-            className="nav-item nav-link"
-            exact
+            className={ ({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}` }
             to="/thirdScreen"
           >
             ThirdScreen
           </NavLink>
 
           <NavLink
-            activeClassName="active"
-            className="nav-item nav-link"
-            exact
+            className={ ({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}` }
             to="/search"
           >
             SearchScreen
@@ -74,16 +64,14 @@ export const Navbar = () => {
         <ul className='navbar-nav ml-auto'>
 
           <span className='nav-item nav-link text-info'>
-            {context.user.name}
-            {/* {name} */}
+            {name}
           </span>
 
           <button
           className='nav-item nav-link btn'
           onClick={handleLogout}>
             Logout
-          </button>
-          
+          </button>         
         </ul>
       </div>
     </nav>

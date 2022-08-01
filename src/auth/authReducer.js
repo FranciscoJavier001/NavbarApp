@@ -7,10 +7,12 @@ export const authReducer = (state = {}, action) => { //** exportamos authReducer
                 ...action.payload, //** Operador expred para recibir el arreglo como esta */
                 logged: true //** Este es el cambio que hace */
             }
+
         case types.logout:
             return {
                 logged: false //** Cambio el estado a false */
             }
+            
         default:
             return state; //** Cualquier otro caso manda el state como esta */
     }
