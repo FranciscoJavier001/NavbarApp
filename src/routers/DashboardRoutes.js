@@ -14,10 +14,10 @@ export const DashboardRoutes = () => {
 
     <div className='container mt-2'>
         <Routes>
-            <Route path="/firstScreen" component={ < FirstScreen /> } />
-            <Route path="/secondcreen" component={ < SecondScreen /> } />
-            <Route path="/thirdScreen" component={ < ThirdScreen /> } />
-            <Route path="/search" component={ < SearchScreen /> } />
+            <Route path="/firstScreen" element={ < FirstScreen /> } />
+            <Route path="/secondScreen" element={ < SecondScreen /> } />
+            <Route path="/thirdScreen" element={ < ThirdScreen /> } />
+            <Route path="/search" element={ < SearchScreen /> } />
 
             <Route path="/" element={ <FirstScreen />} />
 
